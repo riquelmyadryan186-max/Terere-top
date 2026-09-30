@@ -1,41 +1,133 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Tereré Top | Hambúrguer, Tereré, Porções e Bebidas</title>
-<meta name="description" content="Peça Tereré, hambúrgueres artesanais, porções e bebidas da Tereré Top. Monte seu pedido e finalize pelo WhatsApp.">
-<meta name="theme-color" content="#0a0a0a">
-<meta property="og:title" content="Tereré Top — Qual é o seu favorito?">
-<meta property="og:description" content="Monte seu pedido e finalize pelo WhatsApp.">
-<link rel="icon" type="image/png" href="img/favicon.png">
-<link rel="apple-touch-icon" href="img/favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;700&family=Permanent+Marker&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0b0b">
+  <meta name="description" content="Tereré Top — Tereré, hambúrgueres artesanais, porções e bebidas. Faça seu pedido e finalize pelo WhatsApp.">
+  <title>Tereré Top | Cardápio & Pedidos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<nav class="nav" id="nav" aria-label="Categorias"></nav>
+  <header class="site-header">
+    <div class="brand">
+      <div class="crown">♛</div>
+      <div class="brand-script">Tereré Top</div>
+      <div class="brand-sub">CARDÁPIO • PEDIDOS</div>
+    </div>
+    <button class="cart-pill" id="openCartBtn">🛒 <span id="cartCount">0</span> • <span id="cartTotal">R$ 0,00</span></button>
+  </header>
 
-<header class="hero" id="inicio">
-  <img class="logo" src="img/logo.webp" alt="Tereré Top" width="540" height="235">
-  <p class="ask">QUAL É O SEU FAVORITO?</p>
-  <a class="btn btn-gold" href="#terere" id="btn-order">FAZER MEU PEDIDO</a>
-  <div class="cats" id="cats"></div>
-</header>
+  <nav class="category-nav" aria-label="Categorias">
+    <button data-scroll="terere">🌿 Tereré</button>
+    <button data-scroll="burguer">🍔 Burguer</button>
+    <button data-scroll="porcoes">🍟 Porções</button>
+    <button data-scroll="bebidas">🥤 Bebidas</button>
+    <button data-scroll="adicionais">➕ Adicionais</button>
+  </nav>
 
-<main id="menu">
-  <section class="feat"><h2 class="h">Destaques</h2><div class="list" id="featured"></div></section>
-</main>
-<footer class="foot">© Tereré Top · Sabor de verdade é aqui!</footer>
+  <main>
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="eyebrow">SABOR DE VERDADE É AQUI!</div>
+        <h1>Tereré <span>Top</span></h1>
+        <p>Seu pedido do seu jeito.</p>
+        <button class="gold-btn" data-scroll="terere">FAZER MEU PEDIDO ↓</button>
+      </div>
+    </section>
 
-<button class="cartbar" id="cartbar" aria-label="Ver pedido"><span>🛒 VER PEDIDO</span><span id="cartbar-info">Nenhum item</span></button>
-<div class="overlay" id="overlay" hidden><div class="sheet" id="sheet" role="dialog" aria-modal="true"></div></div>
-<div class="toast" id="toast" role="status"></div>
+    <section class="reference-wrap">
+      <p class="section-kicker">A CARA DO NOSSO CARDÁPIO</p>
+      <h2>Escolha sua categoria</h2>
+      <div class="category-grid">
+        <button class="category-card" data-scroll="terere"><img src="assets/menu_terere.png" alt="Cardápio de tereré"><span>TERERÉ</span></button>
+        <button class="category-card" data-scroll="burguer"><img src="assets/menu_burguer.png" alt="Cardápio de hambúrgueres"><span>BURGUER</span></button>
+        <button class="category-card" data-scroll="porcoes"><img src="assets/menu_porcoes.png" alt="Cardápio de porções"><span>PORÇÕES</span></button>
+        <button class="category-card" data-scroll="bebidas"><img src="assets/menu_bebidas.png" alt="Cardápio de bebidas"><span>BEBIDAS</span></button>
+        <button class="category-card" data-scroll="adicionais"><img src="assets/menu_adicionais.png" alt="Cardápio de adicionais"><span>ADICIONAIS</span></button>
+      </div>
+    </section>
 
-<script src="js/config.js"></script>
-<script src="js/products.js"></script>
-<script src="js/app.js"></script>
+    <section class="menu-section" id="terere">
+      <div class="section-title"><span>🌿</span><div><small>TERERÉ TOP</small><h2>TERERÉ</h2></div></div>
+      <div class="product-grid" id="terereGrid"></div>
+    </section>
+
+    <section class="menu-section" id="burguer">
+      <div class="section-title"><span>👑</span><div><small>TERERÉ TOP</small><h2>BURGUER</h2></div></div>
+      <div class="product-grid" id="burguerGrid"></div>
+    </section>
+
+    <section class="menu-section" id="porcoes">
+      <div class="section-title"><span>🍟</span><div><small>TERERÉ TOP</small><h2>PORÇÕES</h2></div></div>
+      <div class="product-grid" id="porcoesGrid"></div>
+    </section>
+
+    <section class="menu-section" id="bebidas">
+      <div class="section-title"><span>🥤</span><div><small>TERERÉ TOP</small><h2>BEBIDAS</h2></div></div>
+      <div class="product-grid" id="bebidasGrid"></div>
+    </section>
+
+    <section class="menu-section" id="adicionais">
+      <div class="section-title"><span>➕</span><div><small>DEIXE SEU LANCHE DO SEU JEITO!</small><h2>ADICIONAIS</h2></div></div>
+      <div class="product-grid" id="adicionaisGrid"></div>
+    </section>
+  </main>
+
+  <div class="cart-bar" id="cartBar">
+    <div><strong id="barItems">0 itens</strong><span id="barTotal">R$ 0,00</span></div>
+    <button id="openCartBar">VER PEDIDO</button>
+  </div>
+
+  <div class="modal-backdrop" id="cartModal">
+    <aside class="cart-modal" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+      <div class="modal-head">
+        <div><span class="section-kicker">SEU PEDIDO</span><h2 id="cartTitle">Carrinho</h2></div>
+        <button class="close-btn" id="closeCartBtn">×</button>
+      </div>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-summary">
+        <span>Total</span><strong id="modalTotal">R$ 0,00</strong>
+      </div>
+      <button class="gold-btn full" id="checkoutBtn">FINALIZAR PEDIDO</button>
+      <p class="tiny-note">Seu pedido será enviado pelo WhatsApp para <b>(68) 99966-8731</b>.</p>
+    </aside>
+  </div>
+
+  <div class="modal-backdrop" id="checkoutModal">
+    <aside class="checkout-modal" role="dialog" aria-modal="true">
+      <div class="modal-head">
+        <div><span class="section-kicker">QUASE LÁ</span><h2>Finalizar pedido</h2></div>
+        <button class="close-btn" id="closeCheckoutBtn">×</button>
+      </div>
+      <form id="checkoutForm">
+        <label>Nome<input name="name" required placeholder="Seu nome"></label>
+        <label>Endereço<input name="address" required placeholder="Rua, número, bairro"></label>
+        <label>Pagamento
+          <select name="payment" required>
+            <option value="">Selecione</option>
+            <option>PIX</option>
+            <option>Dinheiro</option>
+            <option>Cartão</option>
+          </select>
+        </label>
+        <label id="changeWrap" class="hidden">Troco para quanto?<input name="change" placeholder="Ex.: R$ 50,00"></label>
+        <label>Observação <span class="optional">(opcional)</span><textarea name="note" rows="3" placeholder="Ex.: sem cebola"></textarea></label>
+        <button class="whatsapp-btn full" type="submit">💬 ENVIAR PEDIDO NO WHATSAPP</button>
+      </form>
+    </aside>
+  </div>
+
+  <footer>
+    <div class="footer-brand">Tereré Top</div>
+    <p>QUAL É O SEU FAVORITO?</p>
+    <small>Cardápio digital • Pedido pelo WhatsApp</small>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
