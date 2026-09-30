@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tereré Top | Hambúrguer, Tereré, Porções e Bebidas</title>
+<meta name="description" content="Peça Tereré, hambúrgueres artesanais, porções e bebidas da Tereré Top. Monte seu pedido e finalize pelo WhatsApp.">
+<meta name="theme-color" content="#0a0a0a">
+<meta property="og:title" content="Tereré Top — Qual é o seu favorito?">
+<meta property="og:description" content="Monte seu pedido e finalize pelo WhatsApp.">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<nav class="nav" id="nav" aria-label="Categorias"></nav>
+
+<header class="hero" id="inicio">
+  <img class="logo" src="img/logo.webp" alt="Tereré Top" width="540" height="235">
+  <p class="ask">QUAL É O SEU FAVORITO?</p>
+  <a class="btn btn-gold" href="#terere" id="btn-order">FAZER MEU PEDIDO</a>
+  <div class="cats" id="cats"></div>
+</header>
+
+<main id="menu">
+  <section class="feat"><h2 class="h">Destaques</h2><div class="list" id="featured"></div></section>
+</main>
+<footer class="foot">© Tereré Top · Sabor de verdade é aqui!</footer>
+
+<button class="cartbar" id="cartbar" aria-label="Ver pedido"><span>🛒 VER PEDIDO</span><span id="cartbar-info">Nenhum item</span></button>
+<div class="overlay" id="overlay" hidden><div class="sheet" id="sheet" role="dialog" aria-modal="true"></div></div>
+<div class="toast" id="toast" role="status"></div>
+
+<script src="js/config.js"></script>
+<script src="js/products.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
